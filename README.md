@@ -1,7 +1,7 @@
 # Optimization found
-1. Use stat <filename> for fast O(1) `wc -c`
+1. Use `stat <filename>` for fast O(1) `wc -c` instead of scan the whole file
 2. Use a lookup table to check for spaces
-3. Use a buffer fread() instead of fgetc(). 2048 * 2048 seems good
+3. Use a buffer `fread()` instead of fgetc(). 2048 * 2048 seems good
 4. Remove if branch, check for whitespace using a variable
 5. Use two direct pointer for traversing inside the buffer
 

@@ -15,10 +15,10 @@ make
 ```
 
 # How much faster? 
-3 times faster on big ASCII files. Here's the step I used to benchmark my program.
+3 times faster on big ASCII files. Here's the steps I used to benchmark my program.
 
 ## 1. Create a really big file
-Run this script to create a 10G text files filled with random words
+Run this script to create a 10G text file filled with random words
 ```bash 
 dict_size=$(wc -c < /usr/share/dict/words)
 repeats=$((10737418240 / dict_size + 1))  # 10GB in bytes
@@ -55,4 +55,3 @@ sys	0m0.759s
 ```
 
 That is about 2.6 times faster, with only 50 lines of code.
-There is still room for improvement such as AVX and parallelism.

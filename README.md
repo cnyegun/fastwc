@@ -15,7 +15,7 @@ make
 ```
 
 # How much faster? 
-3 times faster on big ASCII files. Here's the steps I used to benchmark my program.
+2.6 times faster on big ASCII files. Here's the steps I used to benchmark my program.
 
 ## 1. Create a really big file
 Run this script to create a 10G text file filled with random words

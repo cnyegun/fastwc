@@ -21,22 +21,22 @@ int main(int argc, char *argv[]) {
 		fprintf(stderr, "Usage: %s <file_name>\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
+
 	char *file_name = argv[1];
 	FILE *f = fopen(file_name, "rb");
-
-	uint64_t words = 0;
-	uint8_t in_word = 0;
+	uint64_t words = 0; 	// count variable
+	uint8_t in_word = 0;	// normally a bool but they said uint8_t is faster
 	unsigned char buf[2048 * 2048];
 	
 	// hope the compiler will save this to a register
 	const uint8_t *ws_tab = iswhitespace;
 
 	for (;;) {
-		size_t n = read(buf, 1, sizeof(buf), f);
+		size_t n = fread(buf, 1, sizeof(buf), f);
 		if (n == 0) break;
 
 		const unsigned char *p  = buf;
-		const unsigned char *end = buf + n;
+		const unsigned char *end = buf + n;	
 
 		while (p < end) {
 			unsigned char c = *p;
